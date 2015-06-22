@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<saxbench version="2.0">
+    <parsers>
+
+        <parser name="SAX2 Piccolo 0.8 w/NS" classpath="parsers/piccolo-0.8.jar" testClass="SAX2Test"
+                options="ns_on">
+            <property name="org.xml.sax.driver" value="com.bluecast.xml.Piccolo"/>
+        </parser>
+
+        <parser name="SAX2 MXP1 beta3 w/NS" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="SAX2Test"
+                options="ns_on">
+            <property name="org.xml.sax.driver" value="org.xmlpull.v1.sax2.Driver"/>
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParserFactory"/>
+        </parser>
+
+        <parser name="XMLPULL MXP1 beta3 w/NS" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="XmlPullTest"
+                options="ns_on">
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParserFactory"/>
+        </parser>
+
+        <parser name="MXP1 beta1" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="XmlPullTest"
+                options="ns_off">
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParserFactory"/>
+        </parser>
+
+        <parser name="MXP1 beta1 w/NS" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="XmlPullTest"
+                options="ns_on">
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParserFactory"/>
+        </parser>
+
+        <parser name="MXP1 beta1 NO_REUSE" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="XmlPullTest"
+                options="ns_off no_reuse">
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParserFactory"/>
+        </parser>
+
+        <parser name="MXP1 beta1 w/NS NO_REUSE" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="XmlPullTest"
+                options="ns_on no_reuse">
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParserFactory"/>
+        </parser>
+
+        <parser name="MXP1 beta1 w/NS no-string-caching" classpath="parsers/xpp3_MXP1_BETA3.jar" testClass="XmlPullTest"
+                options="ns_on">
+            <property name="org.xmlpull.v1.XmlPullParserFactory" value="org.xmlpull.mxp1.MXParser"/>
+        </parser>
+
+
+    </parsers>
+
+    <tests>
+        <test name="SOAP 1 (0.5K)" src="src/main/resources/list_soapized_1.xml" iterations="10000"/>
+        <test name="SOAP 10 (2.5K)" src="src/main/resources/list_soapized_10.xml" iterations="8000"/>
+        <test name="SOAP 100 (26K)" src="src/main/resources/list_soapized_100.xml" iterations="2000"/>
+        <test name="SOAP 10K (2.7MB)" src="src/main/resources/list_soapized_10000.xml" iterations="25"/>
+
+        <test name="Random 100 (33K)" src="src/main/resources/rand_100.xml" iterations="2000"/>
+        <test name="Random 10K (3.6MB)" src="src/main/resources/rand_10000.xml" iterations="30"/>
+
+        <test name="Topic Map (2MB)" src="data/topicmap.xml" iterations="50"/>
+        <test name="Mostly Text (7MB)" src="data/testaments.xml" iterations="25"/>
+    </tests>
+</saxbench>
+
