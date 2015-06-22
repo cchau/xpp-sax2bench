@@ -1,0 +1,14 @@
+<s:Envelope xmlns:s="urn:schemas-xmlsoap-org:soap.v1" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance">
+    <s:Body>
+        <ns2:ListEntry xmlns:ns2="urn:develop-com:javaclass:roxtest">
+            <llong>3</llong>
+            <sshort>1</sshort>
+            <iint>0</iint>
+            <ffloat>4.0</ffloat>
+            <cchar>s</cchar>
+            <ddouble>5.0</ddouble>
+            <sstring>Hello</sstring>
+            <next xsi:null="1"/>
+        </ns2:ListEntry>
+    </s:Body>
+</s:Envelope>
